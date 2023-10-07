@@ -1,20 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Providers from "./src/utils/providers";
+import App from "./src/app";
+import { SafeAreaView } from "react-native";
 
-export default function App() {
+export default () => {
+  /**
+   * Este es el archivo principal de la aplicación y es el que se ejecuta primero.
+   * Aquí se importan los providers y se envuelve la aplicación en ellos.
+   */
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={{flex: 1}} forceInset={{ top: 'never' }}>
+      <Providers>
+        <App/>
+      </Providers>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
