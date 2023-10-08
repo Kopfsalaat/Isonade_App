@@ -11,7 +11,7 @@ export default function Providers({children})
 {
     const [fontsLoaded, fontError] = useFonts({
         'Lemon-Regular': require('../../assets/fonts/Lemon-Regular.ttf'),
-        'BalooTammudu2-VariableFont_wght': require('../../assets/fonts/BalooTammudu2-VariableFont_wght.ttf'),
+        'Baloo': require('../../assets/fonts/BalooTammudu2-VariableFont_wght.ttf'),
     });
 
     if (!fontsLoaded && !fontError) {
