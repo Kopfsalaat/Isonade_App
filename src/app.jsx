@@ -13,8 +13,9 @@ export default function App()
      */
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator initialRouteName='Map'>
                 <Stack.Screen name="Inicio" component={Screens.Inicio} options={{ headerShown: false }}/>
+                <Stack.Screen name="Map" component={Screens.Map} options={{ headerShown: false }}/>
                 <Stack.Screen name="Home" component={Screens.Home} />
                 <Stack.Screen name="Settings" component={Screens.Settings} />
             </Stack.Navigator>

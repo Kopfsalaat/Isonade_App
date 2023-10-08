@@ -1,4 +1,3 @@
-import { useCallback, useEffect } from "react";
 import { GluestackUIProvider, Text } from "@gluestack-ui/themed";
 import { config } from "@gluestack-ui/config";
 import { Provider } from "react-redux";
