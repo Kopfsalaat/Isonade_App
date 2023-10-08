@@ -27,7 +27,7 @@ function SettingsScreen({
         dispatch(UserSetName(name));
         dispatch(UserSetLastName(lastName));
         // Se navega a la pantalla anterior
-        navigation.goBack();
+        navigation.navigate('Home');
     }
 
     return (
