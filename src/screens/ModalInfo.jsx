@@ -1,19 +1,16 @@
 import { Box, Button, Center, HStack, Avatar, AvatarImage, ButtonText } from '@gluestack-ui/themed';
-import { View, Text, StyleSheet, Image } from 'react-native';
-import { ImageBackground } from 'react-native-web';
+import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
-function ModalInfo({ navigator })
+function ModalInfo({ navigation })
 {
     return (
         <View>
-            <Box sx={{"@base": {height: 914}}}>
-                <ImageBackground source={require('../../assets/pictures/coral.png')} resizeMode="cover" style={{flex: 1, justifyContent: 'center'}} imageStyle={{opacity: 0.5}}>
-                    <Box style={{paddingLeft: 20}}>
-                        <Button borderRadius='$full' size='lg' backgroundColor='#00327B' style={{width: 50, height: 50}} onPress={() => navigation.navigate('Home')}>
-                            <AntDesign name="arrowleft" size={24} color="white" />
-                        </Button>
-                    </Box>
+            <Box sx={{h: "100%"}}>
+                <ImageBackground source={require("../../assets/pictures/coral.png")} resizeMode="cover" style={{flex: 1, justifyContent: 'center', alignItems: "center"}} imageStyle={{opacity: 0.5}}>
+                    <Button style={styles.buttonBack} onPress={() => navigation.goBack()}>
+                        <AntDesign name="arrowleft" style={styles.buttonBacText} color="white" />
+                    </Button>
                     <Box style={{ paddingVertical: 10, paddingHorizontal: 50}}>
                         <Center><Text style={{fontFamily: 'Lemon-Regular', fontSize: 30, paddingBottom: 15, color: 'white'}}>Río Valdivia</Text></Center>
                         <Text style={{fontFamily: 'Lemon-Regular', fontSize: 25, color: '#00327B'}}>Información</Text>
@@ -65,6 +62,23 @@ function ModalInfo({ navigator })
 };
 
 const styles = StyleSheet.create({
+    buttonBack: {
+        width: 50,
+        height: 50,
+        backgroundColor: '#00327B',
+        borderRadius: 50,
+        position: 'absolute',
+        zIndex: 10,
+        top: 80,
+        left: 20
+    },
+    buttonBacText: {
+        width: 50,
+        height: "100%",
+        textAlign: 'center',
+        textAlignVertical: 'center',
+        fontSize: 24
+    },
     progress: {
         width: 300,
         height: 30,

@@ -9,7 +9,7 @@ function InicioScreen({ navigation }) {
 
     return (
         <View> 
-            <Box sx={{"@base": {height: 914}}}>
+            <Box sx={{h: "100%"}}>
                 <ImageBackground accessibilityLabel='Fondo del océano' source={require('../../assets/pictures/Fondo.jpg')} resizeMode="cover" style={{flex: 1, justifyContent: 'center'}}>
                     <Center>
                     <Box style={{ paddingTop: 75}}><Image alt='Ballena' size="lg" source={require('../../assets/pictures/ballena.png')}/></Box>
