@@ -3,81 +3,62 @@ import { Image, StyleSheet } from "react-native";
 import { Button, ButtonText, View } from "@gluestack-ui/themed";
 import { AntDesign } from '@expo/vector-icons';
 import MapView, { Marker } from 'react-native-maps';
+import { useSelector } from "react-redux";
 
 function MapScreen({ navigation })
 {
-    const [origin, setOrigin] = React.useState({
-        latitude: 60.93388263559193, 
-        longitude: -117.05849658510526,
-        latitudeDelta: 1.8,
-        longitudeDelta: 1.8,
-      });
+  const { location, watersNearby } = useSelector(state => state.watersInfo.value);
+  const [origin, setOrigin] = React.useState(location);
 
-    const markers = [
-      {
-        origin: {
-          latitude: 60.99259059307894,
-          longitude: -116.3173882770687
-        }
-      },
-      {
-        origin: {
-          latitude: 60.911058454479196,
-          longitude: -117.61276320106656
-        }
-      },
-      {
-        origin: {
-          latitude: 60.537503163143704,
-          longitude: -117.52919218777555
-        }
-      }
-    ]
-    
-    return (
-        <View style={styles.container}>
-          <Button style={styles.profile} onPress={() => navigation.navigate('Home')}>
-            <ButtonText>
-              <AntDesign name="user" size={24} />
-            </ButtonText>
-          </Button>
-          <MapView
-            style={styles.map}
-            initialRegion={origin}
+  const markers = watersNearby;
+
+  function openModal(waterInfo) {
+    navigation.navigate('ModalInfo', {waterInfo});
+  }
+  
+  return (
+      <View style={styles.container}>
+        <Button style={styles.profile} onPress={() => navigation.navigate('Home')}>
+          <ButtonText>
+            <AntDesign name="user" size={24} />
+          </ButtonText>
+        </Button>
+        <MapView
+          style={styles.map}
+          initialRegion={origin}
+        >
+          <Marker
+            coordinate={{latitude: origin.latitude, longitude: origin.longitude}}
+            title="Location"
+            description="Your current location"
+            onPress={() => console.log('Marker pressed')}
           >
+              <Image
+                accessibilityLabel="Marcador de ubicación"
+                source={require('../../assets/markers/viajero.png')}
+                style={{width: 40, height: 40}}
+                resizeMode="contain"
+              />
+          </Marker>
+          {markers.map((marker, index) => (
             <Marker
-              coordinate={{latitude: origin.latitude, longitude: origin.longitude}}
-              title="Location"
-              description="Your current location"
-              onPress={() => console.log('Marker pressed')}
+              key={index}
+              coordinate={marker.origin}
+              title={marker.name}
+              onPress={() => openModal(marker)}
             >
                 <Image
                   accessibilityLabel="Marcador de ubicación"
-                  source={require('../../assets/markers/viajero.png')}
+                  source={require('../../assets/markers/marker.png')}
                   style={{width: 40, height: 40}}
                   resizeMode="contain"
                 />
             </Marker>
-            {markers.map((marker, index) => (
-              <Marker
-                key={index}
-                coordinate={marker.origin}
-                title="Location"
-                description="Your current location"
-                onPress={() => console.log('Marker pressed')}
-              >
-                  <Image
-                    accessibilityLabel="Marcador de ubicación"
-                    source={require('../../assets/markers/marker.png')}
-                    style={{width: 40, height: 40}}
-                    resizeMode="contain"
-                  />
-              </Marker>
-            ))}
+          ))}
 
-          </MapView>
-        </View>
-    );
+        </MapView>
+      </View>
+  );
 }
 
 const styles = StyleSheet.create({

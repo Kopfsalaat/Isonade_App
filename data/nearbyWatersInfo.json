@@ -1,0 +1,123 @@
+{
+    "header": {
+        "status": 200,
+        "message": "OK"
+    },
+    "body": {
+        "data": [
+            {
+                "id": 1,
+                "name": "Test 1",
+                "description": "Mollit aute eiusmod duis Lorem fugiat culpa exercitation non duis. Reprehenderit ullamco officia adipisicing ea quis elit et non deserunt culpa cillum dolor incididunt. Anim duis enim nisi nostrud commodo anim occaecat quis magna cillum magna nisi. Elit adipisicing sit enim anim ullamco magna tempor consequat velit. Proident culpa reprehenderit quis elit nisi exercitation ut. Ex velit officia laboris culpa ea eiusmod dolore ut aute.",
+                "origin": {
+                    "latitude": 60.99259059307894,
+                    "longitude": -116.3173882770687
+                },
+                "waterQuality": {
+                    "state": "Good",
+                    "value": 0.8,
+                    "params": {
+                        "temperature": 0.8,
+                        "ph": 0.8,
+                        "turbidity": 0.8,
+                        "dissolvedOxygen": 0.8,
+                        "conductivity": 0.8,
+                        "salinity": 0.8
+                    }
+                },
+                "environment": [
+                    {
+                        "img": "tortuga.png",
+                        "name": "Tortuga",
+                        "description": "Est labore deserunt Lorem Lorem. Incididunt pariatur dolor aute nostrud nostrud fugiat sint sunt ullamco duis sunt. Lorem fugiat officia enim mollit velit. Exercitation officia proident incididunt ut Lorem incididunt Lorem culpa reprehenderit duis nisi ipsum aute."
+                    },
+                    {
+                        "img": "conchitas.png",
+                        "name": "Conchitas",
+                        "description": "Anim anim consequat qui enim culpa sint commodo. Proident ullamco proident consequat et dolore deserunt amet dolor ad. Anim et anim deserunt cillum quis dolore velit esse magna amet ex cupidatat deserunt occaecat. Pariatur cillum fugiat dolore ullamco velit voluptate consectetur cillum ea velit ad irure ullamco officia. Eiusmod exercitation deserunt elit ea amet qui ad quis. Est eiusmod tempor ullamco ex deserunt esse reprehenderit pariatur excepteur minim et. Non deserunt fugiat quis irure aliquip esse sunt sit nulla nulla tempor."
+                    }
+                ],
+                "advices": [
+                    "Anim ex duis incididunt quis in consequat incididunt anim aute ut ex mollit. Lorem laboris sit exercitation in do pariatur non sint. Ad voluptate nisi et consectetur est do magna sunt qui ad cillum exercitation voluptate. Consectetur sit consectetur voluptate labore consectetur ea dolore cupidatat culpa.",
+                    "Anim et enim nostrud mollit ullamco ex ipsum excepteur non elit aliquip anim officia. Ipsum tempor do ipsum irure tempor ex sunt. Officia ea sunt et elit commodo ea dolor dolore mollit nisi aliqua proident consectetur."
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Test 2",
+                "description": "Cupidatat sunt Lorem duis enim nulla id commodo deserunt quis ad in laborum. Nulla commodo ea ut esse velit. Magna ut nostrud mollit eiusmod cillum irure aute fugiat reprehenderit incididunt laborum culpa excepteur.",
+                "origin": {
+                    "latitude": 60.911058454479196,
+                    "longitude": -117.61276320106656
+                },
+                "waterQuality": {
+                    "state": "Good",
+                    "value": 0.8,
+                    "params": {
+                        "temperature": 0.8,
+                        "ph": 0.8,
+                        "turbidity": 0.8,
+                        "dissolvedOxygen": 0.8,
+                        "conductivity": 0.8,
+                        "salinity": 0.8
+                    }
+                },
+                "environment": [
+                    {
+                        "img": "delfines.png",
+                        "name": "Delphines",
+                        "description": "Est labore deserunt Lorem Lorem. Incididunt pariatur dolor aute nostrud nostrud fugiat sint sunt ullamco duis sunt. Lorem fugiat officia enim mollit velit. Exercitation officia proident incididunt ut Lorem incididunt Lorem culpa reprehenderit duis nisi ipsum aute."
+                    },
+                    {
+                        "img": "conchitas.png",
+                        "name": "Conchitas",
+                        "description": "Anim anim consequat qui enim culpa sint commodo. Proident ullamco proident consequat et dolore deserunt amet dolor ad. Anim et anim deserunt cillum quis dolore velit esse magna amet ex cupidatat deserunt occaecat. Pariatur cillum fugiat dolore ullamco velit voluptate consectetur cillum ea velit ad irure ullamco officia. Eiusmod exercitation deserunt elit ea amet qui ad quis. Est eiusmod tempor ullamco ex deserunt esse reprehenderit pariatur excepteur minim et. Non deserunt fugiat quis irure aliquip esse sunt sit nulla nulla tempor."
+                    }
+                ],
+                "advices": [
+                    "Anim et enim nostrud mollit ullamco ex ipsum excepteur non elit aliquip anim officia. Ipsum tempor do ipsum irure tempor ex sunt. Officia ea sunt et elit commodo ea dolor dolore mollit nisi aliqua proident consectetur.",
+                    "Sit ea dolore fugiat adipisicing laborum eiusmod commodo voluptate. Consectetur magna proident laborum duis proident reprehenderit id deserunt dolor amet laborum. Et eu est adipisicing ut deserunt anim labore exercitation. Consectetur magna in irure anim sunt id. Et nisi duis id proident non sint et sint ea. Sunt mollit officia excepteur velit mollit tempor pariatur est excepteur nulla ea.",
+                    "Incididunt proident sint ad nulla esse fugiat quis occaecat velit. Occaecat laboris nostrud minim cupidatat ex eiusmod dolor quis pariatur exercitation ipsum ea Lorem elit. Voluptate proident veniam culpa pariatur sunt esse laborum cillum nostrud labore laboris in proident labore. Esse reprehenderit ea mollit sunt laboris consequat consequat nostrud."
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Test 3",
+                "description": "Sint dolor aliquip aute aute adipisicing nostrud exercitation magna. Ad ullamco qui reprehenderit tempor sit enim ea sit aliqua anim ad cupidatat eiusmod. Sint minim aliquip laborum ex elit id proident in duis nisi anim officia. Aute do proident elit sunt laborum pariatur ut laborum id in magna veniam.",
+                "origin": {
+                    "latitude": 60.537503163143704,
+                    "longitude": -117.52919218777555
+                },
+                "waterQuality": {
+                    "state": "Good",
+                    "value": 0.8,
+                    "params": {
+                        "temperature": 0.8,
+                        "ph": 0.8,
+                        "turbidity": 0.8,
+                        "dissolvedOxygen": 0.8,
+                        "conductivity": 0.8,
+                        "salinity": 0.8
+                    }
+                },
+                "environment": [
+                    {
+                        "img": "delfines.png",
+                        "name": "Delphines",
+                        "description": "Est labore deserunt Lorem Lorem. Incididunt pariatur dolor aute nostrud nostrud fugiat sint sunt ullamco duis sunt. Lorem fugiat officia enim mollit velit. Exercitation officia proident incididunt ut Lorem incididunt Lorem culpa reprehenderit duis nisi ipsum aute."
+                    },
+                    {
+                        "img": "conchitas.png",
+                        "name": "Conchitas",
+                        "description": "Anim anim consequat qui enim culpa sint commodo. Proident ullamco proident consequat et dolore deserunt amet dolor ad. Anim et anim deserunt cillum quis dolore velit esse magna amet ex cupidatat deserunt occaecat. Pariatur cillum fugiat dolore ullamco velit voluptate consectetur cillum ea velit ad irure ullamco officia. Eiusmod exercitation deserunt elit ea amet qui ad quis. Est eiusmod tempor ullamco ex deserunt esse reprehenderit pariatur excepteur minim et. Non deserunt fugiat quis irure aliquip esse sunt sit nulla nulla tempor."
+                    }
+                ],
+                "advices": [
+                    "Anim et enim nostrud mollit ullamco ex ipsum excepteur non elit aliquip anim officia. Ipsum tempor do ipsum irure tempor ex sunt. Officia ea sunt et elit commodo ea dolor dolore mollit nisi aliqua proident consectetur.",
+                    "Sit ea dolore fugiat adipisicing laborum eiusmod commodo voluptate. Consectetur magna proident laborum duis proident reprehenderit id deserunt dolor amet laborum. Et eu est adipisicing ut deserunt anim labore exercitation. Consectetur magna in irure anim sunt id. Et nisi duis id proident non sint et sint ea. Sunt mollit officia excepteur velit mollit tempor pariatur est excepteur nulla ea.",
+                    "Incididunt proident sint ad nulla esse fugiat quis occaecat velit. Occaecat laboris nostrud minim cupidatat ex eiusmod dolor quis pariatur exercitation ipsum ea Lorem elit. Voluptate proident veniam culpa pariatur sunt esse laborum cillum nostrud labore laboris in proident labore. Esse reprehenderit ea mollit sunt laboris consequat consequat nostrud."
+                ]
+            }
+        ]
+    }
+}

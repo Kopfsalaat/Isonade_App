@@ -1,8 +1,9 @@
 import React from 'react';
-import { InputField, View, Input, ButtonText } from '@gluestack-ui/themed';
+import { InputField, View, Input, ButtonText, VStack } from '@gluestack-ui/themed';
 import { Button } from '@gluestack-ui/themed';
 import { useDispatch, useSelector } from 'react-redux';
 import { setName as UserSetName, setLastName as UserSetLastName } from '../store/userSlice';
+import { StyleSheet } from 'react-native';
 
 
 function SettingsScreen({
@@ -27,24 +28,38 @@ function SettingsScreen({
         dispatch(UserSetName(name));
         dispatch(UserSetLastName(lastName));
         // Se navega a la pantalla anterior
-        navigation.navigate('Home');
+        navigation.goBack();
     }
 
     return (
-        <View>
-            <Input>
-                <InputField value={name} placeholder='Nombre' onChangeText={setName}/>
-            </Input>
-            <Input>
-                <InputField value={lastName} placeholder='Apellido' onChangeText={setLastName}/>
-            </Input>
-            <Button onPress={() => save()}>
-                <ButtonText>
-                    Guardar
-                </ButtonText>
-            </Button>
+        <View style={styles.container}>
+            <VStack space='2xl'>
+                <Input style={styles.input}>
+                    <InputField value={name} placeholder='Name' onChangeText={setName}/>
+                </Input>
+                <Input style={styles.input}>
+                    <InputField value={lastName} placeholder='LastName' onChangeText={setLastName}/>
+                </Input>
+                <Button onPress={() => save()}>
+                    <ButtonText>
+                        Save
+                    </ButtonText>
+                </Button>
+            </VStack>
         </View>
     );
 };
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        height: "100%",
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    input: {
+        width: 300,
+    }
+});
 
 export default SettingsScreen;

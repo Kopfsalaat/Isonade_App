@@ -1,63 +1,64 @@
-import { Box, Button, Center, HStack, Avatar, AvatarImage, ButtonText } from '@gluestack-ui/themed';
+import { Box, Button, Center, HStack, Avatar, AvatarImage, ButtonText, ScrollView } from '@gluestack-ui/themed';
 import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
-function ModalInfo({ navigation })
+function ModalInfo({ route, navigation })
 {
+    const { waterInfo } = route.params;
     return (
-        <View>
-            <Box sx={{h: "100%"}}>
+        <ScrollView>
+            <Button style={styles.buttonBack} onPress={() => navigation.goBack()}>
+                <AntDesign name="arrowleft" style={styles.buttonBacText} color="white" />
+            </Button>
+            <Box sx={{h: "100%", paddingTop: 100}}>
                 <ImageBackground source={require("../../assets/pictures/coral.png")} resizeMode="cover" style={{flex: 1, justifyContent: 'center', alignItems: "center"}} imageStyle={{opacity: 0.5}}>
-                    <Button style={styles.buttonBack} onPress={() => navigation.goBack()}>
-                        <AntDesign name="arrowleft" style={styles.buttonBacText} color="white" />
-                    </Button>
                     <Box style={{ paddingVertical: 10, paddingHorizontal: 50}}>
-                        <Center><Text style={{fontFamily: 'Lemon-Regular', fontSize: 30, paddingBottom: 15, color: 'white'}}>Río Valdivia</Text></Center>
-                        <Text style={{fontFamily: 'Lemon-Regular', fontSize: 25, color: '#00327B'}}>Información</Text>
+                        <Center>
+                            <Text style={{fontFamily: 'Lemon-Regular', fontSize: 30, paddingBottom: 15, color: "#00327B"}}>
+                                {waterInfo.name}
+                            </Text>
+                        </Center>
+                        <Text style={{fontFamily: 'Lemon-Regular', fontSize: 25, color: '#00327B'}}>Information</Text>
                         <Text style={{fontFamily: 'Baloo', fontSize: 18}}>
-                            El Río Valdivia es un corto curso natural de agua de Chile que discurre por la Región de Los Ríos
+                            {waterInfo.description}
                         </Text>
-                        <Text style={{fontFamily: 'Lemon-Regular', fontSize: 25, color: '#00327B', paddingBottom: 10}}>Calidad del Agua</Text>
-                        <Box style={styles.progress} >
-                            <Image accessibilityLabel="Fondo" source={require("../../assets/pictures/progress.png")} style={styles.filledTrack}/>
+                        <Text style={{fontFamily: 'Lemon-Regular', fontSize: 25, color: '#00327B', paddingBottom: 10}}>Water Quality</Text>
+                        <Box sx={{justifyContent: "center", alignItems: "center"}}>
+                            <Box style={styles.progress} >
+                                <Image accessibilityLabel="Fondo" source={require("../../assets/pictures/progress.png")} style={{...styles.filledTrack, width: `${waterInfo.waterQuality.value*100}%`}}/>
+                            </Box>
                         </Box>
-                        <Text style={{fontFamily: 'Lemon-Regular', fontSize: 25, color: '#00327B', paddingTop: 10}}>Ecosistema</Text>
+                        <Text style={{fontFamily: 'Lemon-Regular', fontSize: 25, color: '#00327B', paddingTop: 10}}>Environment</Text>
                         <Center>
                             <HStack space="2xl" width="$full">
-                                <Box width="auto">
-                                    <Avatar size="xl" borderRadius="$full">
-                                        <AvatarImage source={require('../../assets/pictures/tortuga.png')}/>
-                                    </Avatar>
-                                    <Center><Text style={{fontFamily: 'Baloo', fontSize: 18}}>
-                                        Tortuga
-                                    </Text></Center>
-                                </Box>
-                                <Box width="auto">
-                                    <Avatar size="xl" borderRadius="$full">
-                                        <AvatarImage source={require('../../assets/pictures/conchitas.png')}/>
-                                    </Avatar>
-                                    <Center><Text style={{fontFamily: 'Baloo', fontSize: 18}}>
-                                        Conchas
-                                    </Text></Center>
-                                </Box>
-                                <Box width="auto">
-                                    <Avatar size="xl" borderRadius="$full">
-                                        <AvatarImage source={require('../../assets/pictures/delfines.png')}/>
-                                    </Avatar>
-                                    <Center><Text style={{fontFamily: 'Baloo', fontSize: 18}}>
-                                        Delfines
-                                    </Text></Center>
-                                </Box>
+                                {
+                                    waterInfo.environment.map(spices => (
+                                        <Box width="auto">
+                                            <Avatar size="xl" borderRadius="$full">
+                                                <AvatarImage source={require('../../assets/pictures/conchitas.png')}/>
+                                            </Avatar>
+                                            <Center>
+                                                <Text style={{fontFamily: 'Baloo', fontSize: 18}}>
+                                                    {spices.name}
+                                                </Text>
+                                            </Center>
+                                        </Box>
+                                    ))
+                                }
                             </HStack>
                         </Center>
-                        <Text style={{fontFamily: 'Lemon-Regular', fontSize: 25, color: '#00327B'}}>¿Como puedes ayudar?</Text>
-                        <Text style={{fontFamily: 'Baloo', fontSize: 18}}>
-                            No tires basura
-                        </Text>
+                        <Text style={{fontFamily: 'Lemon-Regular', fontSize: 25, color: '#00327B'}}>Advices</Text>
+                        {
+                            waterInfo.advices.map(advice => (
+                                <Text style={{fontFamily: 'Baloo', fontSize: 18}}>
+                                    {advice}
+                                </Text>
+                            ))
+                        }
                     </Box>
                 </ImageBackground>
             </Box>
-        </View>
+        </ScrollView>
   )
 };
 
@@ -87,7 +88,6 @@ const styles = StyleSheet.create({
     },
     filledTrack: {
         height: 30,
-        width: "40%",
         borderRadius: 50
     }
 });
