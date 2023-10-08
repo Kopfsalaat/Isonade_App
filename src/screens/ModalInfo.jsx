@@ -32,8 +32,8 @@ function ModalInfo({ route, navigation })
                         <Center>
                             <HStack space="2xl" width="$full">
                                 {
-                                    waterInfo.environment.map(spices => (
-                                        <Box width="auto">
+                                    waterInfo.environment.map((spices, index) => (
+                                        <Box key={`${index}-spices`} width="auto">
                                             <Avatar size="xl" borderRadius="$full">
                                                 <AvatarImage source={require('../../assets/pictures/conchitas.png')}/>
                                             </Avatar>
@@ -49,8 +49,8 @@ function ModalInfo({ route, navigation })
                         </Center>
                         <Text style={{fontFamily: 'Lemon-Regular', fontSize: 25, color: '#00327B'}}>Advices</Text>
                         {
-                            waterInfo.advices.map(advice => (
-                                <Text style={{fontFamily: 'Baloo', fontSize: 18}}>
+                            waterInfo.advices.map((advice, index) => (
+                                <Text key={`${index}-advice`} style={{fontFamily: 'Baloo', fontSize: 18}}>
                                     {advice}
                                 </Text>
                             ))
