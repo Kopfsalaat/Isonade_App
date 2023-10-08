@@ -14,7 +14,7 @@ function ModalInfo({ navigation })
                     <Box style={{ paddingVertical: 10, paddingHorizontal: 50}}>
                         <Center><Text style={{fontFamily: 'Lemon-Regular', fontSize: 30, paddingBottom: 15, color: 'white'}}>Río Valdivia</Text></Center>
                         <Text style={{fontFamily: 'Lemon-Regular', fontSize: 25, color: '#00327B'}}>Información</Text>
-                        <Text style={{fontFamily: 'BalooTammudu2-VariableFont_wght', fontSize: 18}}>
+                        <Text style={{fontFamily: 'Baloo', fontSize: 18}}>
                             El Río Valdivia es un corto curso natural de agua de Chile que discurre por la Región de Los Ríos
                         </Text>
                         <Text style={{fontFamily: 'Lemon-Regular', fontSize: 25, color: '#00327B', paddingBottom: 10}}>Calidad del Agua</Text>
@@ -28,7 +28,7 @@ function ModalInfo({ navigation })
                                     <Avatar size="xl" borderRadius="$full">
                                         <AvatarImage source={require('../../assets/pictures/tortuga.png')}/>
                                     </Avatar>
-                                    <Center><Text style={{fontFamily: 'BalooTammudu2-VariableFont_wght', fontSize: 18}}>
+                                    <Center><Text style={{fontFamily: 'Baloo', fontSize: 18}}>
                                         Tortuga
                                     </Text></Center>
                                 </Box>
@@ -36,7 +36,7 @@ function ModalInfo({ navigation })
                                     <Avatar size="xl" borderRadius="$full">
                                         <AvatarImage source={require('../../assets/pictures/conchitas.png')}/>
                                     </Avatar>
-                                    <Center><Text style={{fontFamily: 'BalooTammudu2-VariableFont_wght', fontSize: 18}}>
+                                    <Center><Text style={{fontFamily: 'Baloo', fontSize: 18}}>
                                         Conchas
                                     </Text></Center>
                                 </Box>
@@ -44,14 +44,14 @@ function ModalInfo({ navigation })
                                     <Avatar size="xl" borderRadius="$full">
                                         <AvatarImage source={require('../../assets/pictures/delfines.png')}/>
                                     </Avatar>
-                                    <Center><Text style={{fontFamily: 'BalooTammudu2-VariableFont_wght', fontSize: 18}}>
+                                    <Center><Text style={{fontFamily: 'Baloo', fontSize: 18}}>
                                         Delfines
                                     </Text></Center>
                                 </Box>
                             </HStack>
                         </Center>
                         <Text style={{fontFamily: 'Lemon-Regular', fontSize: 25, color: '#00327B'}}>¿Como puedes ayudar?</Text>
-                        <Text style={{fontFamily: 'BalooTammudu2-VariableFont_wght', fontSize: 18}}>
+                        <Text style={{fontFamily: 'Baloo', fontSize: 18}}>
                             No tires basura
                         </Text>
                     </Box>
